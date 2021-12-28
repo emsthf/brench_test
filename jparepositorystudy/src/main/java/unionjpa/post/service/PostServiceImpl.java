@@ -22,7 +22,7 @@ public class PostServiceImpl implements PostService {
     private final UserService userService;
 
     @Override
-    public Post addPost(@RequestBody PostDto postDto) {
+    public Post addPost(PostDto postDto) {
         log.info("save Post.");
         return postRepository.save(
                 Post.builder()

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j   // 로그를 뽑아주는 어노테이션
-@RequiredArgsConstructor   // 자동 생성자 생성. 이젠 @Autowired 안써도 된다. Autowired보다 이것을 더 권장
+@RequiredArgsConstructor   // 자동 생성자 생성. 이젠 @Autowired 안써도 된다. Autowired처럼 반복 사용안해도 되기 때문에 이것이 더 편함
 @Service
 public class UserServiceImpl implements UserService {
 
