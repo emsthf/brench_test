@@ -2,6 +2,7 @@ package unionjpa.post.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import unionjpa.comment.model.Comment;
 import unionjpa.post.dto.PostDto;
 import unionjpa.post.model.Post;
 import unionjpa.post.service.PostService;
@@ -34,5 +35,10 @@ public class PostController {
     @GetMapping("/post/getPostByAuthorId/{id}")
     public List<Post> getPostByAuthorId(@PathVariable("id") Long id) {
         return postService.getPostByAuthorId(id);
+    }
+
+    @GetMapping("/post/getComment/{postId}")
+    public List<Comment> getCommentByPostId(@PathVariable Long postId) {
+        return postService.getPostByID(postId).get().getCommentList();
     }
 }
